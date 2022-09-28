@@ -1,1 +1,7 @@
-{"statusCode":200,"headers":{"Content-Type":"application/json"},"body":"{\"message\":\"You did it! have a cookie!\"}"}
+{
+  "statusCode": 200,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"message\":\"You did it! have a cookie!\"}"
+}
