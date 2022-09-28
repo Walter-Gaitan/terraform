@@ -32,3 +32,5 @@ resource "aws_lambda_permission" "api_gw" {
 output "hello_base_url" {
   value = aws_apigatewayv2_stage.dev.invoke_url
 }
+
+
