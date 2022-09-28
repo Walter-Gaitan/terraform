@@ -39,7 +39,7 @@ resource "aws_lambda_function" "hello" {
 resource "aws_cloudwatch_log_group" "hello" {
   name = "/aws/lambda/${aws_lambda_function.hello.function_name}"
 
-  retention_in_days = 14
+  retention_in_days = 7
 }
 
 data "archive_file" "lambda_hello" {
