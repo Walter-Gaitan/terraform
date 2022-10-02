@@ -21,4 +21,14 @@ provider "aws" {
   region = var.region
   profile = var.aws_profile
   shared_credentials_files = [var.aws_credentials_files]
+
+  default_tags {
+    tags = {
+      Project   = "Lambdas with Terraform"
+      CreatedAt = "10-01-2022"
+      ManagedBy = "Terraform"
+      Owner     = "Walter Gaitan"
+      Env       = var.stage_name
+    }
+  }
 }
