@@ -67,8 +67,8 @@ resource "aws_cloudwatch_log_group" "s3" {
 data "archive_file" "lambda_s3" {
   type = "zip"
 
-  source_dir  = "${path.module}/s3"
-  output_path = "${path.module}/s3.zip"
+  source_dir  = "../s3"
+  output_path = "../s3.zip"
 }
 
 resource "aws_s3_object" "lambda_s3" {
