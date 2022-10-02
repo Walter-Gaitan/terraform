@@ -10,5 +10,6 @@ This repository contains the terraform code to deploy a simple web server in AWS
 
 ## Usage
 - Clone the repository
-- Create a file called `terraform.tfvars` and add the following variables:
-```
+- Configure your AWS credentials using the `aws configure` command
+- Run `terraform init` inside the `terraform` folder to initialize the project
+- Run `terraform plan` to see the changes that will be applied
