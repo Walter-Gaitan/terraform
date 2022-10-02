@@ -6,7 +6,7 @@ resource "aws_apigatewayv2_api" "main" {
 resource "aws_apigatewayv2_stage" "dev" {
   api_id = aws_apigatewayv2_api.main.id
 
-  name        = "dev"
+  name        = var.stage_name
   auto_deploy = true
 
   access_log_settings {
