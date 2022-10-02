@@ -23,7 +23,3 @@ resource "aws_s3_object" "test" {
   key     = "hello.json"
   content = jsonencode({ name = "S3" })
 }
-
-output "test_s3_bucket" {
-  value = random_pet.test_bucket_name.id
-}

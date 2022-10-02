@@ -1,6 +1,6 @@
 exports.handler = async (event) => {
     console.log('Event: ', event);
-    let responseMessage = 'You did it! have a cookie!';
+    let responseMessage = 'You did it! this is the first lambda function!';
 
     if (event.queryStringParameters && event.queryStringParameters['Name']) {
         responseMessage = 'Hello, ' + event.queryStringParameters['Name'] + '!';
