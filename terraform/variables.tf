@@ -12,3 +12,8 @@ variable "aws_profile" {
   type    = string
   default = "default"
 }
+
+variable aws_credentials_files {
+  type    = list(string)
+  default = ["~/.aws/credentials"]
+}
