@@ -33,7 +33,7 @@ resource "aws_iam_policy" "test_goodbye_bucket_access" {
           "goodbye:GetObject",
         ]
         Effect   = "Allow"
-        Resource = "arn:aws:goodbye:::${aws_goodbye_bucket.test.id}/*"
+        Resource = "arn:aws:goodbye:::${aws_s3_bucket.test.id}/*"
       },
     ]
   })
@@ -47,8 +47,8 @@ resource "aws_iam_role_policy_attachment" "goodbye_lambda_test_goodbye_bucket_ac
 resource "aws_lambda_function" "goodbye" {
   function_name = "goodbye"
 
-  goodbye_bucket = aws_goodbye_bucket.lambda_bucket.id
-  goodbye_key    = aws_goodbye_object.lambda_goodbye.key
+  s3_bucket = aws_s3_bucket.lambda_bucket.id
+  s3_key    = aws_s3_object.lambda_goodbye.key
 
   runtime = "nodejs16.x"
   handler = "function.handler"
@@ -71,8 +71,8 @@ data "archive_file" "lambda_goodbye" {
   output_path = "../goodbye.zip"
 }
 
-resource "aws_goodbye_object" "lambda_goodbye" {
-  bucket = aws_goodbye_bucket.lambda_bucket.id
+resource "aws_s3_object" "lambda_goodbye" {
+  bucket = aws_s3_bucket.lambda_bucket.id
 
   key    = "goodbye.zip"
   source = data.archive_file.lambda_goodbye.output_path
