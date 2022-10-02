@@ -1,5 +1,5 @@
 resource "random_pet" "test_bucket_name" {
-  prefix = "test"
+  prefix = "goodbye"
   length = 2
 }
 
@@ -20,6 +20,6 @@ resource "aws_s3_bucket_public_access_block" "test" {
 resource "aws_s3_object" "test" {
   bucket = aws_s3_bucket.test.id
 
-  key     = "hello.json"
-  content = jsonencode({ name = "S3" })
+  key     = "goodbye.json"
+  content = jsonencode({ name = "goodbye" })
 }
