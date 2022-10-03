@@ -23,7 +23,7 @@ resource "aws_iam_role_policy_attachment" "goodbye_lambda_policy" {
 }
 
 resource "aws_iam_policy" "test_goodbye_bucket_access" {
-  name        = "TestgoodbyeBucketAccess"
+  name = "TestgoodbyeBucketAccess"
 
   policy = jsonencode({
     Version = "2012-10-17"
