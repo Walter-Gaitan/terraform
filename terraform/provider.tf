@@ -15,6 +15,14 @@ terraform {
   }
 
   required_version = "~> 1.0"
+
+  cloud {
+    organization = "infra-aws"
+
+    workspaces {
+      name = "testing"
+    }
+  }
 }
 
 provider "aws" {
