@@ -26,7 +26,10 @@ It is only necessary to select the right method and the url given by the outputs
 
 ## Usage
 - Clone the repository
-- Configure your AWS credentials using the `aws configure` command
+- Configure your AWS credentials in terraform cloud, if you don't have an account you can create one for free.
+- Create a new workspace and select the repository.
+- Configure the variables in the workspace. In this case, they will be the AWS IAM credentials.
+- Run terraform login and sign in with your Terraform Cloud account.
 - Run `terraform init` inside the `terraform` folder to initialize the project
 - Run `terraform plan` to see the changes that will be applied
 - Run `terraform apply` to apply the changes
