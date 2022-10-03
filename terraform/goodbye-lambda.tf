@@ -67,8 +67,8 @@ resource "aws_cloudwatch_log_group" "goodbye" {
 data "archive_file" "lambda_goodbye" {
   type = "zip"
 
-  source_dir  = "../goodbye"
-  output_path = "../goodbye.zip"
+  source_dir  = "./goodbye"
+  output_path = "./goodbye.zip"
 }
 
 resource "aws_s3_object" "lambda_goodbye" {
