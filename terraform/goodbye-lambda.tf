@@ -23,7 +23,7 @@ resource "aws_iam_role_policy_attachment" "goodbye_lambda_policy" {
 }
 
 resource "aws_iam_policy" "test_goodbye_bucket_access" {
-  name        = "TestgoodbyeBucketAccess"
+  name = "TestgoodbyeBucketAccess"
 
   policy = jsonencode({
     Version = "2012-10-17"
@@ -45,7 +45,7 @@ resource "aws_iam_role_policy_attachment" "goodbye_lambda_test_goodbye_bucket_ac
 }
 
 resource "aws_lambda_function" "goodbye" {
-  function_name = "goodbye"
+  function_name = "goodbye-${var.stage_name}"
 
   s3_bucket = aws_s3_bucket.lambda_bucket.id
   s3_key    = aws_s3_object.lambda_goodbye.key
